@@ -17,15 +17,17 @@ public class OrdersAnalysisTopology {
 
 	public static void main(String[] args) {
 
-//		BrokerHosts hosts = new ZkHosts("ymhHadoop:2181,ymhHadoop2:2181,ymhHadoop3:2181");
-//
-//		SpoutConfig spoutConfig = new SpoutConfig(hosts, topicName, zkRoot, UUID.randomUUID().toString());
-//		spoutConfig.scheme = new SchemeAsMultiScheme(new StringScheme());
-//		KafkaSpout kafkaSpout = new KafkaSpout(spoutConfig);
+		// BrokerHosts hosts = new
+		// ZkHosts("ymhHadoop:2181,ymhHadoop2:2181,ymhHadoop3:2181");
+		//
+		// SpoutConfig spoutConfig = new SpoutConfig(hosts, topicName, zkRoot,
+		// UUID.randomUUID().toString());
+		// spoutConfig.scheme = new SchemeAsMultiScheme(new StringScheme());
+		// KafkaSpout kafkaSpout = new KafkaSpout(spoutConfig);
 
 		TopologyBuilder builder = new TopologyBuilder();
 		builder.setSpout("kafkaSpout", new SentenceSpout());
-//		builder.setSpout("kafkaSpout", kafkaSpout);
+		// builder.setSpout("kafkaSpout", kafkaSpout);
 		builder.setBolt("merchantsSalesBolt", new MerchantsSalesAnalysisBolt(), 5).shuffleGrouping("kafkaSpout");
 
 		Config conf = new Config();

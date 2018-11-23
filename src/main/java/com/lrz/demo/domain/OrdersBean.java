@@ -1,15 +1,21 @@
 package com.lrz.demo.domain;
 
-import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * 订单实体类
+ * 
+ * @Description:
+ * @author:DARUI LI
+ * @version:1.0.0
+ * @Data:2018年11月23日 下午3:40:13
+ */
 public class OrdersBean {
 	Date createTime = null;
 	String number = "";
 	String paymentNumber = "";
 	Date paymentDate = null;
 	String merchantName = "";
-	ArrayList<SkusBean> skuGroup = null;
 	float totalPrice = 0;
 	float discount = 0;
 	float paymentPrice = 0;
@@ -76,14 +82,6 @@ public class OrdersBean {
 
 	public void setPaymentPrice(float paymentPrice) {
 		this.paymentPrice = paymentPrice;
-	}
-
-	public ArrayList<SkusBean> getSkuGroup() {
-		return skuGroup;
-	}
-
-	public void setSkuGroup(ArrayList<SkusBean> skuGroup) {
-		this.skuGroup = skuGroup;
 	}
 
 }

@@ -8,7 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * 模拟代码订单生成器
+ * 模拟代码订单生成器,生成文件放入 logs/app.log 后续程序获取目录下文件进行解析
  * 
  * @Description:
  * @author:DARUI LI
@@ -21,11 +21,11 @@ public class OrdersInfoGenerator {
 	}
 
 	public enum merchantNames {
-		Storm, Oracle, Java, CSDN, 优衣库, 天猫, 淘宝, 咕噜大大, 快乐宝贝, Druid, Kafka, 守望先峰, 哈毒妇, 跑男, 路易斯威登, 暴雪公司, Apple, Sumsam, Nissan, Benz, BMW, Maserati
+		Storm, Oracle, Java, CSDN, 优衣库, 天猫, 淘宝, 阿里巴巴, 快乐宝贝, Druid, Kafka, 骆驼人, 复印机, 超级英雄, 日产汽车, 网易新闻, Apple, 联想笔记本, 戴尔笔记本, 小米, 华为, 锤子
 	}
 
 	public enum productNames {
-		吊带, 袜子, 限时抢购裤腰带, 手套, 猫罐头, 黑色连衣裙, 灰色连衣裙, 棕色衬衫, 性感牛仔裤, 圆脚牛仔裤, 塑身牛仔裤, 朋克卫衣, 高腰阔腿休闲裤, 人字拖鞋, 沙滩拖鞋, BOOKS
+		T480S, T480, X1Carbon, 小米空气净化器, 小米手机, 吊带, 袜子, 限时抢购裤腰带, 手套, 猫罐头, 连衣裙, 哈哈哈, 衬衫, 牛仔裤, Druid大数据实时分析书, 锤子手机, 卫衣, 联想小红帽, 拖鞋, 登山鞋, 快乐宝贝儿充棉秋裤
 	}
 
 	float[] skuPriceGroup = { 299, 399, 699, 899, 1000, 2000 };

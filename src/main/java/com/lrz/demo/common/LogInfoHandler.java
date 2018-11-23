@@ -7,6 +7,13 @@ import java.util.regex.Pattern;
 
 import com.lrz.demo.domain.OrdersBean;
 
+/**
+ * 日志解析工具类
+ * @Description:
+ * @author:DARUI LI
+ * @version:1.0.0
+ * @Data:2018年11月23日 下午3:39:32
+ */
 public class LogInfoHandler {
 
 
