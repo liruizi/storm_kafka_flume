@@ -8,12 +8,11 @@ import java.util.regex.Pattern;
 import com.lrz.demo.domain.OrdersBean;
 
 public class LogInfoHandler {
-	SimpleDateFormat sdf_final = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 
 	public OrdersBean getOrdersBean(String orderInfo) {
 
 		OrdersBean order = new OrdersBean();
-
 		// 从日志信息中过滤出订单信息
 		Pattern orderPattern = Pattern.compile("orderNumber:.+");
 		Matcher orderMatcher = orderPattern.matcher(orderInfo);
@@ -30,7 +29,7 @@ public class LogInfoHandler {
 			String orderCreateTime = orderInfoGroup[1].trim().split(" ")[1] + " "
 					+ orderInfoGroup[1].trim().split(" ")[2];
 			try {
-				order.setCreateTime(sdf_final.parse(orderCreateTime));
+				order.setCreateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(orderCreateTime));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -41,7 +40,7 @@ public class LogInfoHandler {
 			order.setMerchantName(merchantName);
 
 			// 获取订单总额
-			String orderPriceInfo = (orderInfoGroup[6].split("price:"))[1].trim();
+			String orderPriceInfo = (orderInfoGroup[5].split("price:"))[1].trim();
 			String totalPrice = (orderPriceInfo.substring(2, orderPriceInfo.length() - 3).trim().split(" "))[1];
 			order.setTotalPrice(Float.parseFloat(totalPrice));
 

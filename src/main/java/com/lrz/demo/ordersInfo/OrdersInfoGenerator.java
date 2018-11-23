@@ -21,11 +21,11 @@ public class OrdersInfoGenerator {
 	}
 
 	public enum merchantNames {
-		优衣库, 天猫, 淘宝, 咕噜大大, 快乐宝贝, 守望先峰, 哈毒妇, Storm, Oracle, Java, CSDN, 跑男, 路易斯威登, 暴雪公司, Apple, Sumsam, Nissan, Benz, BMW, Maserati
+		Storm, Oracle, Java, CSDN, 优衣库, 天猫, 淘宝, 咕噜大大, 快乐宝贝, Druid, Kafka, 守望先峰, 哈毒妇, 跑男, 路易斯威登, 暴雪公司, Apple, Sumsam, Nissan, Benz, BMW, Maserati
 	}
 
 	public enum productNames {
-		黑色连衣裙, 灰色连衣裙, 棕色衬衫, 性感牛仔裤, 圆脚牛仔裤, 塑身牛仔裤, 朋克卫衣, 高腰阔腿休闲裤, 人字拖鞋, 沙滩拖鞋
+		吊带, 袜子, 限时抢购裤腰带, 手套, 猫罐头, 黑色连衣裙, 灰色连衣裙, 棕色衬衫, 性感牛仔裤, 圆脚牛仔裤, 塑身牛仔裤, 朋克卫衣, 高腰阔腿休闲裤, 人字拖鞋, 沙滩拖鞋, BOOKS
 	}
 
 	float[] skuPriceGroup = { 299, 399, 699, 899, 1000, 2000 };
@@ -64,8 +64,7 @@ public class OrdersInfoGenerator {
 		String priceInfo = calculateOrderPrice();
 
 		return "orderNumber: " + orderNumber + " | orderDate: " + orderDate + " | paymentNumber: " + paymentNumber
-				+ " | paymentDate: " + paymentDate + " | merchantName: " + merchantName + " | sku: " + skuInfo
-				+ " | price: " + priceInfo;
+				+ " | paymentDate: " + paymentDate + " | merchantName: " + merchantName + " | price: " + priceInfo;
 	}
 
 	private String randomPaymentWays() {
