@@ -92,12 +92,12 @@ public class OrdersInfoGenerator {
 	private String randomSkus() {
 
 		Random random = new Random();
-		int skuCategoryNum = random.nextInt(3);
+		int skuCategoryNum = random.nextInt(4);
 
 		String skuInfo = "[";
 
 		totalPrice = 0;
-		for (int i = 1; i <= 3; i++) {
+		for (int i = 1; i <= skuCategoryNum; i++) {
 
 			int skuNum = random.nextInt(3) + 1;
 			float skuPrice = skuPriceGroup[random.nextInt(skuPriceGroup.length)];
